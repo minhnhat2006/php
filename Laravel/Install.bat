@@ -1,0 +1,1 @@
+composer create-project laravel/laravel Laravel "~5.0.0" --prefer-dist
