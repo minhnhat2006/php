@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function view($page = 'home')
+	public function index($page = 'home')
     {
     	if (!file_exists(APPPATH . '/views/pages/' . $page . '.php'))
         {

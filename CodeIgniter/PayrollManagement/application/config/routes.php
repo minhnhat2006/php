@@ -53,6 +53,6 @@ $route['post/create'] = 'post/create';
 $route['post/(:any)'] = 'post/view/$1';
 $route['post'] = 'post';
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
