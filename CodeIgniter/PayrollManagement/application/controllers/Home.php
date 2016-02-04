@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require_once '/../../Classes/PHPExcel.php';
+require_once '/../../Classes/PHPExcel/Writer/Excel2007.php';
+require_once '/../../Classes/PHPExcel/IOFactory.php';
+
 class Home extends CI_Controller {
 
 	/**
@@ -31,5 +35,18 @@ class Home extends CI_Controller {
         $this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer', $data);
+    }
+
+	/**
+	* View spreadsheet using PHPExcel.
+	*/
+    public function test()
+    {
+		$inputFileName = 'D:/Projects/Git/php/CodeIgniter/PayrollManagement/assert/doc/bangluong.ods';
+		$objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
+		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'HTML');
+		$objWriter->save('D:/Projects/Git/php/CodeIgniter/PayrollManagement/application/views/document/example.html');
+		
+		$this->load->view('document/example.html');
     }
 }
