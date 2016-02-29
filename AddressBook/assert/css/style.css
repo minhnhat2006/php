@@ -1,0 +1,79 @@
+.container {
+    padding: 10px 200px;
+}
+
+.container .content .entry-list {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.container .content .entry-list tr:hover {
+    background-color: #f5f5f5;
+}
+
+.container .content .entry-list th, .container .content .entry-list td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.container .content .entry-list th a {
+    color: #000;
+    text-decoration: none;
+}
+
+.container .content .entry-edit tr td label {
+    min-width: 150px;
+    display: inline-block;
+}
+
+.container .content .entry-edit tr td input[type="text"], .container .content .entry-edit tr td select {
+    min-width: 200px;
+}
+
+.container .header-menu ul.menu {
+    padding: 0;
+}
+
+.container .header-menu ul.menu li {
+    display: inline;
+}
+
+.container .header-menu ul.menu li a {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px 4px 0 0;
+}
+
+.container .header-menu ul.menu li a:hover {
+    background-color: #A09898;
+}
+
+.container .header-search {
+    padding: 0 0 15px 0;
+}
+
+.container .header-search label {
+    width: 170px;
+}
+
+.container .header-search #search {
+    width: 200px;
+}
+
+.required:after {
+    content: " * ";
+    color: red;
+}
+
+.errorMsg {
+    color: red;
+    padding: 10px;
+}
