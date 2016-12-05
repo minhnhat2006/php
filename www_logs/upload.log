@@ -1,0 +1,108 @@
+2016-12-02T11:09:44+01:00 DEBUG (7): Put uploaded file to: D:\Projects\Git\php\www_v1\web\upload\tempupload/images/d6-8a-d68ac24d5a436192cd3edde32f290fa3-photo-200013796568260004485-20101480673384000136.png
+2016-12-02T11:09:44+01:00 DEBUG (7): success uploaded file to: D:\Projects\Git\php\www_v1\web\upload\tempupload/images/d6-8a-d68ac24d5a436192cd3edde32f290fa3-photo-200013796568260004485-20101480673384000136.png
+2016-12-02T11:09:45+01:00 DEBUG (7): cURL resource: Resource id #138; cURL error: SSL certificate problem: unable to get local issuer certificate (cURL error code 60). See http://curl.haxx.se/libcurl/c/libcurl-errors.html for an explanation of error codes.
+2016-12-02T11:09:45+01:00 ERR (3): =================== EXCEPTION BEGIN ==================
+cURL resource: Resource id #138; cURL error: SSL certificate problem: unable to get local issuer certificate (cURL error code 60). See http://curl.haxx.se/libcurl/c/libcurl-errors.html for an explanation of error codes.
+2016-12-02T11:09:45+01:00 ERR (3): #0 D:\Projects\Git\php\www_v1\library\Vendor\Amazon\sdk-1.5.6.2\services\s3.class.php(903): RequestCore->send_request()
+#1 D:\Projects\Git\php\www_v1\library\Vendor\Amazon\sdk-1.5.6.2\services\s3.class.php(1388): AmazonS3->authenticate('tc_userimages', Array)
+#2 D:\Projects\Git\php\www_v1\library\Tallcat\Service\BucketService.php(153): AmazonS3->create_object('tc_userimages', 'd6/8a/d68ac24d5...', Array)
+#3 D:\Projects\Git\php\www_v1\library\Tallcat\Service\PhotoManager.php(163): Tallcat_Service_BucketService->saveFile('D:\\Projects\\Git...', 'photo', 'd6/8a/d68ac24d5...', '201014806733840...', 'image/png')
+#4 D:\Projects\Git\php\www_v1\library\Tallcat\Service\PhotoManager.php(131): Tallcat_Service_PhotoManager->sendMedia(Array, 'D:\\Projects\\Git...', 'd6/8a/d68ac24d5...', '201014806733840...')
+#5 D:\Projects\Git\php\www_v1\library\Tallcat\Service\ResourceService.php(687): Tallcat_Service_PhotoManager->handleUpload('photo', Array, '201014806733840...', 'unnamed.png', '201612021109444...', 'D:\\Projects\\Git...')
+#6 D:\Projects\Git\php\www_v1\library\Tallcat\Service\ResourceService.php(567): Tallcat_Service_ResourceService->doProcessUpload('000000000000000...', 'testuser1/mypho...', Array, 'jpg|jpeg|gif|pn...', 'photo', '201612021109444...')
+#7 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(248): Tallcat_Service_ResourceService->processUpload('000000000000000...', 'testuser1/mypho...', Array, 'jpg|jpeg|gif|pn...', 'photo', '201612021109444...')
+#8 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(295): UploadController->handle_file_upload('201612021109444...', Array, 'jpg|jpeg|gif|pn...', 'photo', 0)
+#9 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(100): UploadController->doReceiveFile('photo', 'jpg|jpeg|gif|pn...')
+#10 D:\Projects\Git\php\www_v1\library\Zend\Controller\Action.php(513): UploadController->photoAction()
+#11 D:\Projects\Git\php\www_v1\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('photoAction')
+#12 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(212): Zend_Controller_Front->dispatch()
+#14 D:\Projects\Git\php\www_v1\web\upload\index.php(161): Zend_Controller_Front::run('D:\\Projects\\Git...')
+#15 {main}
+2016-12-02T11:09:45+01:00 ERR (3): 
+=================== EXCEPTION END ==================
+
+2016-12-02T11:09:45+01:00 ERR (3): =================== EXCEPTION BEGIN ==================
+Upload Fail
+2016-12-02T11:09:45+01:00 ERR (3): #0 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(100): UploadController->doReceiveFile('photo', 'jpg|jpeg|gif|pn...')
+#1 D:\Projects\Git\php\www_v1\library\Zend\Controller\Action.php(513): UploadController->photoAction()
+#2 D:\Projects\Git\php\www_v1\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('photoAction')
+#3 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#4 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(212): Zend_Controller_Front->dispatch()
+#5 D:\Projects\Git\php\www_v1\web\upload\index.php(161): Zend_Controller_Front::run('D:\\Projects\\Git...')
+#6 {main}
+2016-12-02T11:09:45+01:00 ERR (3): 
+=================== EXCEPTION END ==================
+
+2016-12-02T11:18:22+01:00 DEBUG (7): Put uploaded file to: D:\Projects\Git\php\www_v1\web\upload\tempupload/images/d6-8a-d68ac24d5a436192cd3edde32f290fa3-photo-200013796568260004485-201014806739020003011.png
+2016-12-02T11:18:23+01:00 DEBUG (7): success uploaded file to: D:\Projects\Git\php\www_v1\web\upload\tempupload/images/d6-8a-d68ac24d5a436192cd3edde32f290fa3-photo-200013796568260004485-201014806739020003011.png
+2016-12-02T11:18:28+01:00 DEBUG (7): cURL resource: Resource id #138; cURL error: SSL certificate problem: unable to get local issuer certificate (cURL error code 60). See http://curl.haxx.se/libcurl/c/libcurl-errors.html for an explanation of error codes.
+2016-12-02T11:18:28+01:00 ERR (3): =================== EXCEPTION BEGIN ==================
+cURL resource: Resource id #138; cURL error: SSL certificate problem: unable to get local issuer certificate (cURL error code 60). See http://curl.haxx.se/libcurl/c/libcurl-errors.html for an explanation of error codes.
+2016-12-02T11:18:28+01:00 ERR (3): #0 D:\Projects\Git\php\www_v1\library\Vendor\Amazon\sdk-1.5.6.2\services\s3.class.php(903): RequestCore->send_request()
+#1 D:\Projects\Git\php\www_v1\library\Vendor\Amazon\sdk-1.5.6.2\services\s3.class.php(1388): AmazonS3->authenticate('tc_userimages', Array)
+#2 D:\Projects\Git\php\www_v1\library\Tallcat\Service\BucketService.php(153): AmazonS3->create_object('tc_userimages', 'd6/8a/d68ac24d5...', Array)
+#3 D:\Projects\Git\php\www_v1\library\Tallcat\Service\PhotoManager.php(163): Tallcat_Service_BucketService->saveFile('D:\\Projects\\Git...', 'photo', 'd6/8a/d68ac24d5...', '201014806739020...', 'image/png')
+#4 D:\Projects\Git\php\www_v1\library\Tallcat\Service\PhotoManager.php(131): Tallcat_Service_PhotoManager->sendMedia(Array, 'D:\\Projects\\Git...', 'd6/8a/d68ac24d5...', '201014806739020...')
+#5 D:\Projects\Git\php\www_v1\library\Tallcat\Service\ResourceService.php(687): Tallcat_Service_PhotoManager->handleUpload('photo', Array, '201014806739020...', 'pavn.png', '201612021118226...', 'D:\\Projects\\Git...')
+#6 D:\Projects\Git\php\www_v1\library\Tallcat\Service\ResourceService.php(567): Tallcat_Service_ResourceService->doProcessUpload('000000000000000...', 'testuser1/mypho...', Array, 'jpg|jpeg|gif|pn...', 'photo', '201612021118226...')
+#7 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(248): Tallcat_Service_ResourceService->processUpload('000000000000000...', 'testuser1/mypho...', Array, 'jpg|jpeg|gif|pn...', 'photo', '201612021118226...')
+#8 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(295): UploadController->handle_file_upload('201612021118226...', Array, 'jpg|jpeg|gif|pn...', 'photo', 0)
+#9 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(100): UploadController->doReceiveFile('photo', 'jpg|jpeg|gif|pn...')
+#10 D:\Projects\Git\php\www_v1\library\Zend\Controller\Action.php(513): UploadController->photoAction()
+#11 D:\Projects\Git\php\www_v1\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('photoAction')
+#12 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(212): Zend_Controller_Front->dispatch()
+#14 D:\Projects\Git\php\www_v1\web\upload\index.php(154): Zend_Controller_Front::run('D:\\Projects\\Git...')
+#15 {main}
+2016-12-02T11:18:28+01:00 ERR (3): 
+=================== EXCEPTION END ==================
+
+2016-12-02T11:18:28+01:00 ERR (3): =================== EXCEPTION BEGIN ==================
+Upload Fail
+2016-12-02T11:18:28+01:00 ERR (3): #0 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(100): UploadController->doReceiveFile('photo', 'jpg|jpeg|gif|pn...')
+#1 D:\Projects\Git\php\www_v1\library\Zend\Controller\Action.php(513): UploadController->photoAction()
+#2 D:\Projects\Git\php\www_v1\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('photoAction')
+#3 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#4 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(212): Zend_Controller_Front->dispatch()
+#5 D:\Projects\Git\php\www_v1\web\upload\index.php(154): Zend_Controller_Front::run('D:\\Projects\\Git...')
+#6 {main}
+2016-12-02T11:18:28+01:00 ERR (3): 
+=================== EXCEPTION END ==================
+
+2016-12-02T11:22:12+01:00 DEBUG (7): Put uploaded file to: D:\Projects\Git\php\www_v1\web\upload\tempupload/images/d6-8a-d68ac24d5a436192cd3edde32f290fa3-photo-200013796568260004485-201014806741320001697.png
+2016-12-02T11:22:12+01:00 DEBUG (7): success uploaded file to: D:\Projects\Git\php\www_v1\web\upload\tempupload/images/d6-8a-d68ac24d5a436192cd3edde32f290fa3-photo-200013796568260004485-201014806741320001697.png
+2016-12-02T11:22:12+01:00 DEBUG (7): cURL resource: Resource id #138; cURL error: SSL certificate problem: unable to get local issuer certificate (cURL error code 60). See http://curl.haxx.se/libcurl/c/libcurl-errors.html for an explanation of error codes.
+2016-12-02T11:22:12+01:00 ERR (3): =================== EXCEPTION BEGIN ==================
+cURL resource: Resource id #138; cURL error: SSL certificate problem: unable to get local issuer certificate (cURL error code 60). See http://curl.haxx.se/libcurl/c/libcurl-errors.html for an explanation of error codes.
+2016-12-02T11:22:12+01:00 ERR (3): #0 D:\Projects\Git\php\www_v1\library\Vendor\Amazon\sdk-1.5.6.2\services\s3.class.php(903): RequestCore->send_request()
+#1 D:\Projects\Git\php\www_v1\library\Vendor\Amazon\sdk-1.5.6.2\services\s3.class.php(1388): AmazonS3->authenticate('tc_userimages', Array)
+#2 D:\Projects\Git\php\www_v1\library\Tallcat\Service\BucketService.php(153): AmazonS3->create_object('tc_userimages', 'd6/8a/d68ac24d5...', Array)
+#3 D:\Projects\Git\php\www_v1\library\Tallcat\Service\PhotoManager.php(163): Tallcat_Service_BucketService->saveFile('D:\\Projects\\Git...', 'photo', 'd6/8a/d68ac24d5...', '201014806741320...', 'image/png')
+#4 D:\Projects\Git\php\www_v1\library\Tallcat\Service\PhotoManager.php(131): Tallcat_Service_PhotoManager->sendMedia(Array, 'D:\\Projects\\Git...', 'd6/8a/d68ac24d5...', '201014806741320...')
+#5 D:\Projects\Git\php\www_v1\library\Tallcat\Service\ResourceService.php(687): Tallcat_Service_PhotoManager->handleUpload('photo', Array, '201014806741320...', 'pavn.png', '201612021122121...', 'D:\\Projects\\Git...')
+#6 D:\Projects\Git\php\www_v1\library\Tallcat\Service\ResourceService.php(567): Tallcat_Service_ResourceService->doProcessUpload('000000000000000...', 'testuser1/mypho...', Array, 'jpg|jpeg|gif|pn...', 'photo', '201612021122121...')
+#7 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(248): Tallcat_Service_ResourceService->processUpload('000000000000000...', 'testuser1/mypho...', Array, 'jpg|jpeg|gif|pn...', 'photo', '201612021122121...')
+#8 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(295): UploadController->handle_file_upload('201612021122121...', Array, 'jpg|jpeg|gif|pn...', 'photo', 0)
+#9 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(100): UploadController->doReceiveFile('photo', 'jpg|jpeg|gif|pn...')
+#10 D:\Projects\Git\php\www_v1\library\Zend\Controller\Action.php(513): UploadController->photoAction()
+#11 D:\Projects\Git\php\www_v1\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('photoAction')
+#12 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(212): Zend_Controller_Front->dispatch()
+#14 D:\Projects\Git\php\www_v1\web\upload\index.php(154): Zend_Controller_Front::run('D:\\Projects\\Git...')
+#15 {main}
+2016-12-02T11:22:12+01:00 ERR (3): 
+=================== EXCEPTION END ==================
+
+2016-12-02T11:22:12+01:00 ERR (3): =================== EXCEPTION BEGIN ==================
+Upload Fail
+2016-12-02T11:22:12+01:00 ERR (3): #0 D:\Projects\Git\php\www_v1\app\upload\controllers\UploadController.php(100): UploadController->doReceiveFile('photo', 'jpg|jpeg|gif|pn...')
+#1 D:\Projects\Git\php\www_v1\library\Zend\Controller\Action.php(513): UploadController->photoAction()
+#2 D:\Projects\Git\php\www_v1\library\Zend\Controller\Dispatcher\Standard.php(295): Zend_Controller_Action->dispatch('photoAction')
+#3 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#4 D:\Projects\Git\php\www_v1\library\Zend\Controller\Front.php(212): Zend_Controller_Front->dispatch()
+#5 D:\Projects\Git\php\www_v1\web\upload\index.php(154): Zend_Controller_Front::run('D:\\Projects\\Git...')
+#6 {main}
+2016-12-02T11:22:12+01:00 ERR (3): 
+=================== EXCEPTION END ==================
+

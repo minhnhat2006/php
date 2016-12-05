@@ -1,0 +1,25 @@
+2016-12-01T08:09:53+01:00 CRIT (2): Application error
+2016-12-01T08:10:44+01:00 CRIT (2): Application error
+2016-12-01T08:13:26+01:00 ERR (3): Fetch query failed: Unable to retrieve server info [401]:
+Headers: Array
+(
+    [Date] =>  Thu, 01 Dec 2016 07:13:26 GMT
+    [Content-Type] =>  application/json; charset=UTF-8
+    [WWW-Authenticate] =>  Basic realm="Neo4j"
+    [Content-Length] =>  138
+    [Server] =>  Jetty(9.2.z-SNAPSHOT)
+)
+Body: Array
+(
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [code] => Neo.ClientError.Security.Unauthorized
+                    [message] => No authentication header supplied.
+                )
+
+        )
+
+)
+

@@ -1,0 +1,1 @@
+Modify database connection config at /config/db.config.php (DB_HOST, DB_NAME, DB_USER, or DB_PASSWORD)
