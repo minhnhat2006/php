@@ -1,0 +1,114 @@
+.single article {
+	margin: 0 0 20px 0;
+}
+
+.project-name {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    display: block;
+    font-size: 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+}
+
+.project-name .address {
+    width: 65%;
+    float: left;
+    font-size: 14px;
+    color: gray;
+}
+
+.project-name .address h4 {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 0 10px 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.project-name .title-project {
+	color: black;
+    padding: 0;
+    margin: 0;
+    font-size: 22pt;
+}
+
+.post-gallery {
+	margin: 0;
+    max-width: 100%;
+    max-height: 402px;
+    overflow: hidden;
+    border-top: solid 1px #b9b9b9;
+    border-bottom: solid 1px #b9b9b9;
+}
+
+.grid-gallery {
+	margin-top: 0 !important;
+}
+
+.table-header-group {
+    border-bottom: solid 1px #b9b9b9;
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0 20px 0;
+}
+
+.table-header {
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    width: 80px;
+}
+
+.lnk-info {
+    float: right;
+    width: 190px;
+    padding: 10px;
+    background: #cf2a0e;
+    text-transform: uppercase;
+    font-size: 10pt;
+    text-align: center;
+    border: solid 1px #cf2a0e;
+}
+
+.lnk-info a {
+	color: white;
+}
+
+.lnk-phone {
+	float: right;
+    width: 190px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 10pt;
+    text-align: center;
+    border: solid 1px;
+    margin: 0 20px;
+}
+
+.lnk-phone a {
+	color: black;
+}
+
+.table-info {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0 20px 0;
+}
+
+.info-content {
+	padding: 5px 0;
+}
+
+.info-title {
+	padding: 0;
+}
+
+.info-value {
+	font-weight: bold;
+	padding: 0;
+	color: black;
+}
