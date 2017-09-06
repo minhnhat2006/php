@@ -1,22 +1,41 @@
 <?php
 
+global $show_admin_bar;
+$show_admin_bar=false;
+
 function gateway_enqueue_parent_theme_style() {
     wp_enqueue_style( 'gateway-parent-style', get_template_directory_uri().'/style.css' );
     wp_dequeue_style( 'gateway-style' );
+    wp_enqueue_style( 'gateway-child-style-flaticon-multimedia', get_stylesheet_directory_uri().'/include/fontflat/multimedia/flaticon.css' );
+    wp_enqueue_style( 'gateway-child-style-flaticon', get_stylesheet_directory_uri().'/css/flaticon.css' );
+    wp_enqueue_style( 'gateway-child-style-jquery-ui', get_stylesheet_directory_uri().'/include/jquery-ui-themes-1.11.4/themes/smoothness/jquery-ui.min.css');
     wp_enqueue_style( 'gateway-child-style', get_stylesheet_directory_uri().'/style.css' );
     wp_enqueue_style( 'gateway-child-style-header', get_stylesheet_directory_uri().'/css/header.css' );
-    wp_enqueue_style( 'gateway-child-style-icon', get_stylesheet_directory_uri().'/css/icon.css' );
-    wp_enqueue_style( 'gateway-child-style-font-awesome', get_stylesheet_directory_uri().'/css/font-awesome.css' );
-    wp_enqueue_style( 'gateway-child-style-single-post', get_stylesheet_directory_uri().'/css/single.css' );
+    wp_enqueue_style( 'gateway-child-style-header-post', get_stylesheet_directory_uri().'/css/header-post.css' );
+    // wp_enqueue_style( 'gateway-child-style-font-awesome', get_stylesheet_directory_uri().'/include/font-awesome-4.7.0/css/font-awesome.min.css' );
+    wp_enqueue_style( 'gateway-child-style-search', get_stylesheet_directory_uri().'/css/search.css' );
+    wp_enqueue_style( 'gateway-child-style-single-house', get_stylesheet_directory_uri().'/css/single-house.css' );
+    wp_enqueue_style( 'gateway-child-style-profile', get_stylesheet_directory_uri().'/css/profile.css' );
+    wp_enqueue_style( 'gateway-child-style-contact-us', get_stylesheet_directory_uri().'/css/contact-us.css' );
+    wp_enqueue_style( 'gateway-child-style-sliderengine-amazingslider-1', get_stylesheet_directory_uri().'/include/slider/sliderengine/amazingslider-1.css' );
+
+    wp_enqueue_script( 'gateway-child-js-jquery-ui', get_stylesheet_directory_uri().'/js/jquery-ui.min.js' );
+    wp_enqueue_script( 'gateway-child-js-jquery-browser-min', get_stylesheet_directory_uri().'/js/jquery.browser.min.js' );
+
+    wp_enqueue_script( 'gateway-child-js-home', get_stylesheet_directory_uri().'/js/home.js' );
+    wp_enqueue_script( 'gateway-child-js-search', get_stylesheet_directory_uri().'/js/search.js' );
+    wp_enqueue_script( 'gateway-child-js-profile', get_stylesheet_directory_uri().'/js/profile.js' );
+    wp_enqueue_script( 'gateway-child-js-sliderengine-amazingslider', get_stylesheet_directory_uri().'/include/slider/sliderengine/amazingslider.js' );
+    wp_enqueue_script( 'gateway-child-js-sliderengine-initslider-1', get_stylesheet_directory_uri().'/include/slider/sliderengine/initslider-1.js' );
 }
 add_action( 'wp_enqueue_scripts', 'gateway_enqueue_parent_theme_style', 99 );
 
-function create_sale_post() {
-	register_post_type( 'sale-post',
+function create_house_post() {
+	register_post_type( 'house-post',
 		array(
 			'labels' => array(
-				'name' => __( 'Nhà đất bán' ),
-				'singular_name' => __( 'Nhà đất bán' ),
+				'name' => __( 'House' ),
+				'singular_name' => __( 'House' ),
 			),
 			'public' => true,
 			'has_archive' => false,
@@ -29,12 +48,12 @@ function create_sale_post() {
 	));
 }
 
-function create_lease_post() {
-	register_post_type( 'lease-post',
+function create_apartment_post() {
+	register_post_type( 'apartment-post',
 		array(
 			'labels' => array(
-				'name' => __( 'Nhà đất cho thuê' ),
-				'singular_name' => __( 'Nhà đất cho thuê' ),
+				'name' => __( 'Căn hộ' ),
+				'singular_name' => __( 'Căn hộ' ),
 			),
 			'public' => true,
 			'has_archive' => false,
@@ -47,12 +66,12 @@ function create_lease_post() {
 	));
 }
 
-function create_project_post() {
-	register_post_type( 'project-post',
+function create_villa_post() {
+	register_post_type( 'villa-post',
 		array(
 			'labels' => array(
-				'name' => __( 'Dự án mới' ),
-				'singular_name' => __( 'Dự án mới' ),
+				'name' => __( 'Biệt thự' ),
+				'singular_name' => __( 'Biệt thự' ),
 			),
 			'public' => true,
 			'has_archive' => false,
@@ -67,66 +86,9 @@ function create_project_post() {
 	));
 }
 
-function create_news_post() {
-	register_post_type( 'news-post',
-		array(
-			'labels' => array(
-				'name' => __( 'Thông tin thị trường' ),
-				'singular_name' => __( 'Thông tin thị trường' ),
-			),
-			'public' => true,
-			'has_archive' => false,
-			'supports' => array(
-				'title',
-				'editor',
-				'thumbnail',
-				'custom-fields'
-			)
-	));
-}
-
-function create_building_post() {
-	register_post_type( 'building-post',
-		array(
-			'labels' => array(
-				'name' => __( 'Tòa nhà nổi bật' ),
-				'singular_name' => __( 'Tòa nhà nổi bật' ),
-			),
-			'public' => true,
-			'has_archive' => false,
-			'supports' => array(
-				'title',
-				'editor',
-				'thumbnail',
-				'custom-fields'
-			)
-	));
-}
-
-function create_resident_post() {
-	register_post_type( 'resident-post',
-		array(
-			'labels' => array(
-				'name' => __( 'Khu dân cư' ),
-				'singular_name' => __( 'Khu dân cư' ),
-			),
-			'public' => true,
-			'has_archive' => false,
-			'supports' => array(
-				'title',
-				'editor',
-				'thumbnail',
-				'custom-fields'
-			)
-	));
-}
-
-add_action( 'init', 'create_sale_post' );
-add_action( 'init', 'create_lease_post' );
-add_action( 'init', 'create_project_post' );
-add_action( 'init', 'create_news_post' );
-add_action( 'init', 'create_building_post' );
-add_action( 'init', 'create_resident_post' );
+add_action( 'init', 'create_house_post' );
+add_action( 'init', 'create_apartment_post' );
+add_action( 'init', 'create_villa_post' );
 
 function custom_pagination($numpages = '', $pagerange = '', $paged='') {
   if (empty($pagerange)) {
@@ -183,3 +145,17 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
   }
 
 }
+
+//Create extra fields called Altnative Text and Custom Classess
+function my_extra_gallery_fields( $args, $attachment_id, $field ){
+    $args['alt'] = array('type' => 'text', 'label' => 'Altnative Text', 'name' => 'alt', 'value' => get_field($field . '_alt', $attachment_id) ); // Creates Altnative Text field
+    $args['class'] = array('type' => 'text', 'label' => 'Custom Classess', 'name' => 'class', 'value' => get_field($field . '_class', $attachment_id) ); // Creates Custom Classess field
+    return $args;
+}
+add_filter( 'acf_photo_gallery_image_fields', 'my_extra_gallery_fields', 10, 3 );
+
+// Include several features
+require 'include/filter.php';
+require 'include/profile.php';
+require 'include/contact-us.php';
+require 'include/login_form_modal.php';

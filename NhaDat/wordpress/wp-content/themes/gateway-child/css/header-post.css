@@ -1,0 +1,103 @@
+.site-header {
+    height: auto;
+}
+
+.post-header-bg {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    font-size: 16px;
+    z-index: 1;
+    background-color: white;
+    border-bottom: solid 1px rgba(0,0,0,0.1);
+}
+
+.post-header-bg .top-bar:before {
+    display: none;
+}
+
+.post-header-bg .row, .post-header-bg .top-bar {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 15px;
+    height: 100px;
+}
+
+.post-header-bg nav.top-bar .top-bar-section {
+    float: right;
+}
+
+.post-header-bg .row .float-right {
+    text-align: right;
+    width: 100%;
+}
+
+.post-header-bg ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;   
+}
+
+.header-top {
+    height: 45px;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.025);
+    font-weight: 300;
+}
+
+.header-top .user-menu {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    margin: 0;
+}
+
+.header-top .social {
+    list-style: none;
+    margin: 0 0 0 30px;
+    padding: 0;
+    display: inline-block;
+}
+
+.header-top li, .header-top a {
+    color: #555;
+    font-size: 16px;
+}
+
+.header-top .fa-search {
+    margin: 0 0 0 30px;
+    cursor: pointer;
+}
+
+.header-main {
+    float: left;
+    width: 185px !important;
+    display: block;
+}
+
+.header-main .branding {
+    padding: 40px 0;
+    width: 120px;
+    display: inline-block;
+    float: left;
+}
+
+.post-header-bg #menu-top-menu > li, .post-header-bg #menu-top-menu > li > a {
+	background: transparent !important;
+	color: #555 !important;
+	line-height: 100px !important;
+	text-transform: uppercase !important;
+    font-size: 16px !important;
+}
+
+.post-header-bg #menu-top-menu > li > a:after {
+    margin-right: 0;
+    right: inherit;
+    border-color: transparent;
+}
+
+.header-fixed {
+    position: fixed;
+    top: -46px;
+}

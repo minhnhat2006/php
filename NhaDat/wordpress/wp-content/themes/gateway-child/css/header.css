@@ -14,23 +14,113 @@
 /* =Theme customization starts here
 -------------------------------------------------------------- */
 
+.home-header-bg {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    z-index: 1;
+    image-rendering: crisp-edges!important;
+    image-rendering: pixelated!important;
+    background: url(http://rever.vn/public/images/slide01.jpg) 50% 50% / cover no-repeat !important;
+}
+
+.site-branding {
+    background: rgba(0,0,0,.2);
+    height: 100%;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 0 !important;
+}
+
+.site-branding .site-title {
+    padding: 230px 0 0 0 !important;
+}
+
+.home-header-bg .hero-widgets-wrap {
+	margin: 20px 0;
+    padding: 245px 0;
+}
+
 .top-bar {
 	display: block !important;
 	line-height: 0 !important;
-	background: transparent;
+	background-color: transparent !important;
+}
+
+.top-bar:before {
+	content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -80%;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(180deg,rgba(0,0,0,.5),transparent);
 }
 
 .top-bar-section {
 	top: 0 !important;
+	float: left;
 }
 
 .header-logo {
-	width: 100px;
-	display: inline-block;
 	float: left;
+    width: 170px;
+    padding: 20px 20px 20px 40px!important;
+    display: inline-block;
+    border-right: 1px #dddddd solid;
+}
+
+.header-logo a img {
+	width: 130px;
 }
 
 .menu-top-menu > li, .menu-top-menu > li > a, #menu-top-menu > li, #menu-top-menu > li > a {
 	background: transparent !important;
 	color: white !important;
+	line-height: 60px !important;
+	text-transform: none !important;
+}
+
+.has-dropdown ul.sub-menu {
+    text-align: left;
+    left: 0px;
+    border-bottom: 0;
+}
+
+.has-dropdown ul.sub-menu li {
+    border-top: 1px #eeeeee solid;
+    background-color: transparent;
+}
+
+.has-dropdown ul.sub-menu li a {
+	text-transform: none;
+}
+
+.has-dropdown > a:after {
+    border-color: rgba(255, 255, 255, 1) transparent transparent transparent !important;
+    top: 30.5px !important;
+}
+
+.has-dropdown ul.sub-menu li a:hover {
+    background-color: #eeeeee !important;
+    color: inherit !important;
+}
+
+#ajaxsearchlite1 {
+    height: 50px;
+}
+
+#ajaxsearchlite1 .probox, #ajaxsearchlite1 .promagnifier, #ajaxsearchlite1 .proclose, #ajaxsearchlite1 .proloading, #ajaxsearchlite1 .prosettings, 
+#ajaxsearchlite1 .proinput, #ajaxsearchlite1 form, #ajaxsearchlite1 form input {
+    height: 100% !important;
+    font-size: 12pt !important;
+}
+
+#ajaxsearchlite1 .proloading {
+    height: 33px !important;
+    margin: 10px;
 }

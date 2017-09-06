@@ -14,6 +14,22 @@
 /* =Theme customization starts here
 -------------------------------------------------------------- */
 
+html, body, h1, h2, h3, h4, h5, h6, a, p, ul {
+  font-family: "Raleway" !important;
+  text-rendering: optimizeLegibility;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body, p, ul {
+  font-size: 16px;
+}
+
+small {
+  opacity: 0.5;
+  font-size: 14px;
+}
+
 .site-content {
     margin-top: 0;
 }
@@ -22,15 +38,26 @@
 	text-align: center;
 }
 
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
 .entry-header {
-	position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px 20px;
-    margin: 0 16px !important;
-    color: white;
-    background: linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.9));
+  position: absolute;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  margin: 0 16px !important;
+  color: white;
+  background: linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.9));
+  line-height: 1.6;
+  font-size: 10pt;
 }
 
 .entry-title {
@@ -65,9 +92,9 @@ article .featured-image img {
 
 .lnk-btn a {
 	background: rgba(0, 0, 0, 0.78);
-    color: white;
-    font-weight: bold;
-    padding: 5px 60px;
+  color: white;
+  font-weight: bold;
+  padding: 5px 60px;
 }
 
 .featured-posts {
@@ -129,19 +156,6 @@ article .featured-image img {
 .entry-dd h5 {
 	margin-bottom: 5pt;
 	font-size: 11pt;
-}
-
-.entry-size ul {
-	margin: 0;
-	font-size: 12pt;
-}
-
-.entry-size ul li {
-	margin-right: 20px;
-}
-
-.entry-size ul li:before {
-	padding-right: 3px;
 }
 
 .entry-desc {
@@ -206,4 +220,79 @@ article .featured-image img {
     color: #db251d;
     font-weight: bold;
     font-size: 14pt;
+}
+
+.page-title {
+  color: #000000 !important;
+  line-height: 2.5;
+}
+
+.msg-success {
+  display: inline-block;
+  min-height: 35px;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0 0 20px 0px;
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  padding: 5px;
+}
+
+input:required {
+  outline: none;
+  opacity: 1;
+}
+
+.required:after { 
+  content:"*"; 
+}
+
+.tooltip:after {
+  border-top: 10px solid #70b001;
+}
+
+.lt-icon {
+  margin: 0 6px 0 0;
+  opacity: 0.8;
+}
+
+.vspace {
+  clear: both;
+  height: 20px;
+}
+
+.vspace2 {
+  clear: both;
+  height: 40px;
+}
+
+.vspace3 {
+  clear: both;
+  height: 60px;
+}
+
+.button.primary, input.primary[type='submit'], input.primary[type='button'], .lt-button.primary {
+  font-style: normal;
+  line-height: normal;
+  background-color: #70b001;
+  border-color: #70b001;
+  color: white;
+  display: inline-block;
+  min-height: 33px;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  border-radius: 5px !important;
+  text-transform: uppercase;
+  transition: all 0.2s ease !important;
+  padding: 10px 15px;
+}
+
+a, .header-wrap .header-top .nav-language.type-text li.active a, .primary-nav li.current-menu-item > a, .primary-nav li.current-menu-ancestor > a, .login-form .tab-list li a, .box-icon .feature-icon {
+  color: #70b001;
+}
+
+.primary-nav > ul > li.bubble a, .lt-button.primary, input.primary[type='submit'], input.primary[type='button'], .rangeSlider .noUi-connect, .map-wrap .marker .dot, .map-wrap .marker:after, .map-wrap .cluster:before, .map-wrap .cluster:after, .card .status:before, .hero .status:before, .property-hero .status:before, #nprogress .bar, .button:hover, input[type='submit']:hover, input[type='button']:hover, .lt-button:hover, .tooltip, .map-outer-wrap .overlay-link, .select2-container--default .select2-results__option--highlighted[aria-selected], .hero .badge .status:before {
+  background-color: #70b001;
 }
