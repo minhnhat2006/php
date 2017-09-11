@@ -1,0 +1,38 @@
+/*
+ Theme Name:   Storefront Simple
+ Theme URI:    https://rescuethemes.com
+ Description:  Storefront Simple Theme
+ Author:       Nathan Ng
+ Author URI:   https://rescuethemes.com
+ Template:     Storefront
+ Version:      1.0
+ Tags: light, white, gray, orange, three-columns, responsive-layout, featured-images, theme-options, custom-colors, threaded-comments, translation-ready, right-sidebar
+ Text Domain:  Storefront-simple
+*/
+
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+#page {
+	    font-family: "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.site-header {
+	color: #9aa0a7;
+    font-size: 0.875em;
+    font-weight: 400;
+    background-color: #2c2d33;
+}
+
+.main-navigation ul li a, .site-title a, ul.menu li a, .site-branding h1 a, .site-footer .storefront-handheld-footer-bar a:not(.button), button.menu-toggle, button.menu-toggle:hover {
+	color: #d5d9db;
+}
+
+.lang-item img {
+	display: inline-block;
+}
+
+.current-lang a {
+	font-weight: bold;
+}
