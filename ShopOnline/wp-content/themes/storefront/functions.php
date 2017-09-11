@@ -9,9 +9,6 @@
  * Assign the Storefront version to a var
  */
 
-global $show_admin_bar;
-$show_admin_bar=false;
-
 $theme              = wp_get_theme( 'storefront' );
 $storefront_version = $theme['Version'];
 

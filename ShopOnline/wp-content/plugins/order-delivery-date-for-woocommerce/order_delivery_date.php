@@ -4,12 +4,12 @@ Plugin Name: Order Delivery Date for WooCommerce (Lite version)
 Plugin URI: http://www.tychesoftwares.com/store/free-plugin/order-delivery-date-on-checkout/
 Description: This plugin allows customers to choose their preferred Order Delivery Date during checkout.
 Author: Tyche Softwares
-Version: 3.1
+Version: 3.2
 Author URI: http://www.tychesoftwares.com/about
 Contributor: Tyche Softwares, http://www.tychesoftwares.com/
 */
 
-$wpefield_version = '3.1';
+$wpefield_version = '3.2';
 
 include_once( 'integration.php' );
 include_once( 'orddd-lite-config.php' );
@@ -25,7 +25,6 @@ if ( !class_exists( 'order_delivery_date_lite' ) ) {
         public function __construct() {
             //Initialize settings
             register_activation_hook( __FILE__,  array( &$this, 'orddd_lite_activate' ) );
-            register_uninstall_hook( __FILE__,   array( 'order_delivery_date_lite', 'orddd_lite_deactivate' ) );
 
             add_action( 'init',                  array( &$this, 'orddd_lite_update_po_file' ) );
             add_action( 'admin_init',            array( &$this, 'orddd_lite_update_db_check' ) );
@@ -135,41 +134,6 @@ if ( !class_exists( 'order_delivery_date_lite' ) ) {
             }
         }
 
-        public static function orddd_lite_deactivate() {
-            global $orddd_lite_weekdays;
-            delete_option( 'orddd_lite_db_version' );
-            foreach ( $orddd_lite_weekdays as $n => $day_name ) {
-                delete_option( $n );
-            }
-
-            delete_option( 'orddd_lite_enable_delivery_date' );
-            delete_option( 'orddd_lite_minimumOrderDays' );
-            delete_option( 'orddd_lite_number_of_dates' );
-            delete_option( 'orddd_lite_date_field_mandatory' );            
-            delete_option( 'orddd_lite_lockout_date_after_orders' );
-            delete_option( 'orddd_lite_lockout_days' );
-            delete_option( 'orddd_lite_update_value' );
-            delete_option( 'orddd_lite_abp_hrs' );
-            delete_option( 'orddd_lite_enable_default_sorting_of_column' );
-
-            // appearance options
-            delete_option( 'orddd_lite_delivery_date_field_label' );
-            delete_option( 'orddd_lite_delivery_date_field_placeholder' );
-            delete_option( 'orddd_lite_delivery_date_field_note' );
-            delete_option( 'orddd_lite_delivery_date_format' );
-            delete_option( 'orddd_lite_number_of_months' );
-            delete_option( 'orddd_lite_calendar_theme' );
-            delete_option( 'orddd_lite_calendar_theme_name' );
-            delete_option( 'orddd_lite_language_selected' );
-            delete_option( 'orddd_lite_delivery_date_fields_on_checkout_page' );
-            delete_option( 'orddd_lite_default_appearance_settings' );    
-            delete_option( 'orddd_lite_no_fields_for_virtual_product' );
-            delete_option( 'orddd_lite_no_fields_for_featured_product' );
-
-            //holidays
-            delete_option( 'orddd_lite_holidays' );
-        }
-
         // For language translation
         function  orddd_lite_update_po_file() {
             $domain = 'order-delivery-date';
@@ -242,7 +206,7 @@ if ( !class_exists( 'order_delivery_date_lite' ) ) {
         function orddd_lite_update_db_check() {
             global $orddd_lite_plugin_version, $wpefield_version;
             $orddd_lite_plugin_version = $wpefield_version;
-            if ( $orddd_lite_plugin_version == "3.1" ) {
+            if ( $orddd_lite_plugin_version == "3.2" ) {
                 order_delivery_date_lite::orddd_lite_update_install();
             }
         }
@@ -253,7 +217,7 @@ if ( !class_exists( 'order_delivery_date_lite' ) ) {
             //code to set the option to on as default
             $orddd_lite_plugin_version = get_option( 'orddd_lite_db_version' );
             if ( $orddd_lite_plugin_version != order_delivery_date_lite::get_orddd_lite_version() ) {
-                update_option( 'orddd_lite_db_version', '3.1' );
+                update_option( 'orddd_lite_db_version', '3.2' );
                 if ( get_option( 'orddd_lite_update_value' ) != 'yes' ) {
                     $i = 0;
                     foreach ( $orddd_lite_weekdays as $n => $day_name ) {
@@ -350,13 +314,13 @@ if ( !class_exists( 'order_delivery_date_lite' ) ) {
         function admin_notices_scripts() {
             wp_enqueue_script(
                 'dismiss-notice.js',
-                plugins_url('/js/dismiss-notice.js', __FILE__),
+                esc_url( plugins_url('/js/dismiss-notice.js', __FILE__) ),
                 '',
                 '',
                 false
             );
         
-            wp_enqueue_style( 'dismiss-notice', plugins_url('/css/dismiss-notice.css', __FILE__ ) , '', '', false);
+            wp_enqueue_style( 'dismiss-notice', esc_url( plugins_url('/css/dismiss-notice.css', __FILE__ ) ), '', '', false );
         }
             
         function orddd_lite_my_enqueue( $hook ) {
@@ -366,18 +330,18 @@ if ( !class_exists( 'order_delivery_date_lite' ) ) {
             }
             
             wp_dequeue_script( 'themeswitcher' );
-            wp_enqueue_script( 'themeswitcher-orddd', plugins_url( '/js/jquery.themeswitcher.min.js', __FILE__ ), array( 'jquery', 'jquery-ui-sortable', 'jquery-ui-datepicker' ), $wpefield_version, false );
+            wp_enqueue_script( 'themeswitcher-orddd', esc_url( plugins_url( '/js/jquery.themeswitcher.min.js', __FILE__ ) ), array( 'jquery', 'jquery-ui-sortable', 'jquery-ui-datepicker' ), $wpefield_version, false );
                 
             foreach ( $orddd_lite_languages as $key => $value ) {
-                wp_enqueue_script( $value, plugins_url( "/js/i18n/jquery.ui.datepicker-$key.js", __FILE__ ), array( 'jquery', 'jquery-ui-datepicker' ), $wpefield_version, false );
+                wp_enqueue_script( $value, esc_url( plugins_url( "/js/i18n/jquery.ui.datepicker-$key.js", __FILE__ ) ), array( 'jquery', 'jquery-ui-datepicker' ), $wpefield_version, false );
             }
             
-            wp_register_style( 'woocommerce_admin_styles', plugins_url() . '/woocommerce/assets/css/admin.css', array(), WC_VERSION );
+            wp_register_style( 'woocommerce_admin_styles', esc_url( plugins_url() . '/woocommerce/assets/css/admin.css' ), array(), WC_VERSION );
             wp_enqueue_style( 'woocommerce_admin_styles' );
-            wp_enqueue_style( 'order-delivery-date', plugins_url('/css/order-delivery-date.css', __FILE__ ) , '', $wpefield_version, false);
-            wp_register_style( 'jquery-ui-style', '//code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css', '', $wpefield_version, false );
+            wp_enqueue_style( 'order-delivery-date', esc_url( plugins_url('/css/order-delivery-date.css', __FILE__ ) ) , '', $wpefield_version, false);
+            wp_register_style( 'jquery-ui-style', esc_url( '//code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css' ), '', $wpefield_version, false );
             wp_enqueue_style( 'jquery-ui-style' );
-            wp_enqueue_style( 'datepicker', plugins_url('/css/datepicker.css', __FILE__) , '', $wpefield_version, false);            
+            wp_enqueue_style( 'datepicker', esc_url( plugins_url('/css/datepicker.css', __FILE__) ), '', $wpefield_version, false);            
         }
         
         function orddd_lite_front_scripts_js() {
@@ -388,15 +352,17 @@ if ( !class_exists( 'order_delivery_date_lite' ) ) {
                     $calendar_theme = 'base';
                 }
                 wp_dequeue_style( 'jquery-ui-style' );
-                wp_register_style( 'jquery-ui-style-orddd-lite', "//code.jquery.com/ui/1.9.2/themes/$calendar_theme/jquery-ui.css", '', $wpefield_version, false );
+                wp_register_style( 'jquery-ui-style-orddd-lite', esc_url( "//code.jquery.com/ui/1.9.2/themes/$calendar_theme/jquery-ui.css" ), '', $wpefield_version, false );
                 wp_enqueue_style( 'jquery-ui-style-orddd-lite' );
-                wp_enqueue_style( 'datepicker', plugins_url('/css/datepicker.css', __FILE__) , '', $wpefield_version, false);
+                wp_enqueue_style( 'datepicker', esc_url( plugins_url('/css/datepicker.css', __FILE__) ), '', $wpefield_version, false);
                 
                 wp_dequeue_script( 'initialize-datepicker' );
-                wp_enqueue_script( 'initialize-datepicker-orddd', plugins_url('/js/orddd-lite-initialize-datepicker.js', __FILE__ ), '', $wpefield_version, false );
+                wp_enqueue_script( 'initialize-datepicker-orddd', esc_url( plugins_url( '/js/orddd-lite-initialize-datepicker.js', __FILE__ ) ), '', $wpefield_version, false );
                 
                 $jsArgs = array(
-                        'clearText'    => __( 'Clear', 'order-delivery-date' )
+                        'clearText'    => __( 'Clear', 'order-delivery-date' ),
+                        'holidayText'  => __( 'Holiday', 'order-delivery-date' ),
+                        'bookedText'   => __( 'Booked', 'order-delivery-date' )
                     );
                 wp_localize_script( 'initialize-datepicker-orddd', 'jsL10n', $jsArgs );
 
@@ -419,7 +385,7 @@ if ( !class_exists( 'order_delivery_date_lite' ) ) {
                     }
                 }
                  
-                wp_enqueue_script( $language_selected, plugins_url( "/js/i18n/jquery.ui.datepicker-$language_selected.js", __FILE__ ), array( 'jquery', 'jquery-ui-datepicker' ), $wpefield_version, false );
+                wp_enqueue_script( $language_selected, esc_url( plugins_url( "/js/i18n/jquery.ui.datepicker-$language_selected.js", __FILE__ ) ), array( 'jquery', 'jquery-ui-datepicker' ), $wpefield_version, false );
             }
         }               
     }
