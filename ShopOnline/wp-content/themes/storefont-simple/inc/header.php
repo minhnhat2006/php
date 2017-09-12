@@ -19,6 +19,8 @@ function single_custom_menu_item ( $items, $args ) {
 
     if ($args->theme_location == 'primary') {
         $items .= do_shortcode('[polylang]');
+
+        $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">' .do_shortcode("[woocs show_flags=0 width='100px' txt_type='code']") . '</li>';
     }
 
     return $items;
