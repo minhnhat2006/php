@@ -37,8 +37,9 @@ ul.menu li.current-menu-item>a {
 	display: inline-block;
 }
 
-.current-lang a {
+.secondary-navigation ul.menu .current-lang a {
 	font-weight: bold;
+    color: #ffffff;
 }
 
 .woocommerce-currency-switcher-form select {
@@ -81,4 +82,11 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
 
 .ssatc-sticky-add-to-cart {
     display: none !important;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
+    padding-top: 1.618em;
+    padding-bottom: 1.618em;
+    line-height: 1.618;
+    height: auto;
 }

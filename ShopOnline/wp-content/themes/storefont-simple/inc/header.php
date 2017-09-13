@@ -17,10 +17,10 @@ add_filter( 'wp_nav_menu_items', 'single_custom_menu_item', 10, 2 );
 
 function single_custom_menu_item ( $items, $args ) {
 
-    if ($args->theme_location == 'primary') {
-        $items .= do_shortcode('[polylang]');
+    if ($args->theme_location == 'secondary') {
+    	$items = '<li class="menu-item menu-item-type-post_type menu-item-object-page">' .do_shortcode("[woocs show_flags=0 width='60px' txt_type='code']") . '</li>' . $items;
 
-        $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">' .do_shortcode("[woocs show_flags=0 width='100px' txt_type='code']") . '</li>';
+        $items = do_shortcode('[polylang]') . $items;
     }
 
     return $items;
