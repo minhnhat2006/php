@@ -13,7 +13,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	{
 		$("#wcps-'.$post_id.'").owlCarousel({
 			
-			items : '.$wcps_column_number.', //10 items above 1000px browser width
+			items : '.$wcps_column_number.',
 
 
 			responsiveClass:true,
@@ -45,7 +45,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			
 			';
 			
-	//var_dump($wcps_auto_play);	
+	//var_dump($wcps_auto_play);
 	
 			$html.= 'loop: '.$wcps_loop.',';
 			$html.= 'rewind: '.$wcps_rewind.',';

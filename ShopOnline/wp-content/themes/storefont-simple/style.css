@@ -67,6 +67,10 @@ a.cart-contents, .site-header-cart .widget_shopping_cart a {
     color: #9aa0a7;	
 }
 
+.site-header .widget_shopping_cart li, .site-header .widget_shopping_cart p.buttons, .site-header .widget_shopping_cart p.total {
+    background-color: #24252b;
+}
+
 button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart, .widget-area .widget a.button, .site-header-cart .widget_shopping_cart a.button {
     background-color: #96588a;
     border-color: #96588a;

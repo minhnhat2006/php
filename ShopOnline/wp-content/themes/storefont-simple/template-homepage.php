@@ -29,9 +29,10 @@ get_header(); ?>
 			 * @hooked storefront_on_sale_products      - 60
 			 * @hooked storefront_best_selling_products - 70
 			 */
-			do_action( 'homepage' ); ?>
+			do_action( 'homepage' );
 
-			<?php echo do_shortcode("[wcps id='101']"); ?>
+			echo do_shortcode('[widget id="text-5"]');
+			echo do_shortcode('[widget id="text-6"]'); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php

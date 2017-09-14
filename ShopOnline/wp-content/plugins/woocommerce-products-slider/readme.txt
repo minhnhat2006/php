@@ -4,7 +4,7 @@
 	Tags: carousel, product, slider, woocommerce, carousel slider, product slider, woocommerce slider, Woocommerce Product slider
 	Requires at least: 3.8
 	Tested up to: 4.8
-	Stable tag: 1.12.15
+	Stable tag: 1.12.16
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,10 @@ then paste this shortcode anywhere in your page to display slider<br />
 
 == Changelog ==
 
+
+
+	= 1.12.16 =
+    * 14/09/2017 fix - remove comment from scripts that prevent work slider properly.
 
 	= 1.12.15 =
     * 25/07/2017 fix - Issue fixed cart button for cloned item.
