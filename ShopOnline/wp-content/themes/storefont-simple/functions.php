@@ -10,4 +10,11 @@ function storefront_enqueue_parent_theme_style() {
 }
 add_action( 'wp_enqueue_scripts', 'storefront_enqueue_parent_theme_style', 99 );
 
+// Button "Comppare" in single product page
+if ( get_option('yith_woocompare_compare_button_in_product_page') == 'yes' ) {
+	global $yith_woocompare;
+	remove_action( 'woocommerce_single_product_summary', array( $yith_woocompare->obj, 'add_compare_link' ), 35 );
+	add_action( 'woocommerce_single_product_summary', array( $yith_woocompare->obj, 'add_compare_link' ), 31 );
+}
+
 require("inc/header.php");
