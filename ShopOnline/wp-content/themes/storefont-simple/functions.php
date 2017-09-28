@@ -18,3 +18,4 @@ if ( get_option('yith_woocompare_compare_button_in_product_page') == 'yes' ) {
 }
 
 require("inc/header.php");
+require("inc/footer.php");
