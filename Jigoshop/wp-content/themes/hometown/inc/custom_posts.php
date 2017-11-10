@@ -7,6 +7,7 @@ function create_type_propety() {
         'name' => __( 'Properties' ),
         'singular_name' => __( 'Property' ),
       ),
+      'taxonomies'  => array( 'topics', 'category' ),
       'public' => true,
       'has_archive' => true,
       'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),

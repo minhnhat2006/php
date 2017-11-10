@@ -12,7 +12,7 @@ class Property_List_Table extends WP_List_Table {
 	}
 
 	private function __build_items_from_wp_query_args() {
-		$per_page = $this->get_items_per_page('properties_per_page', 5);
+		$per_page = $this->get_items_per_page('properties_per_page', 15);
 		$current_page = $this->get_pagenum();
 		$this->_wp_query_args['posts_per_page'] = $per_page;
 		$this->_wp_query_args['paged'] = $current_page;

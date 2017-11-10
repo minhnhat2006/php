@@ -34,7 +34,7 @@ class PickupAdminPage {
 		$option = 'per_page';
 		$args = array(
 			'label' => 'Properties',
-			'default' => 5,
+			'default' => 15,
 			'option' => 'properties_per_page'
 		);
 		add_screen_option( $option, $args );
