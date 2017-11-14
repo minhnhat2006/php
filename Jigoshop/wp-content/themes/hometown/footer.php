@@ -1,4 +1,3 @@
-</div>
 <footer class="footer-main element-dark">
 	<div class="footer-top">
 		<div class="row">

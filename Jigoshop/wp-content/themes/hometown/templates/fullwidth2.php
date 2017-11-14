@@ -7,7 +7,7 @@
  * @since 1.0
  */
 
-get_header('flat-property');
+get_header();
 
 while ( have_posts() ) : the_post();
 	the_content();

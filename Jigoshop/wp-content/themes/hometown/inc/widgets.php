@@ -24,19 +24,9 @@ function hometown_widgets_init() {
 	register_widget( 'Header_Widget' );
 
 	register_sidebar( array(
-		'name'          => __( 'Header line 1', MY_THEME ),
+		'name'          => __( 'Header ', MY_THEME ),
 		'id'            => 'header-1',
 		'description'   => __( 'Add widgets here to appear in your header 1 on blog posts and archive pages.', MY_THEME ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Header line 2', MY_THEME ),
-		'id'            => 'header-2',
-		'description'   => __( 'Add widgets here to appear in your header of shop-2 page.', MY_THEME ),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '<h2 class="widget-title">',

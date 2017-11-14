@@ -7,6 +7,8 @@ function hometown_custom_scripts() {
 	wp_enqueue_style( 'hometown-breeze_03bd941c4663b7dadb010bcdced1605a.css', get_theme_file_uri( '/assets/css/breeze_03bd941c4663b7dadb010bcdced1605a.css' ));
 
 	wp_enqueue_script( 'hometown-maps.googleapis.com.js', '//maps.googleapis.com/maps/api/js?v=3.exp&#038;sensor=false&#038;libraries=places&#038;key=AIzaSyCBybfWlOOpsXx05tU1amB9kSIV3ijZ5PE&#038;ver=2.6.0', array(), false, true );
+	wp_enqueue_script( 'hometown-gg-recaptcha-api.js', 'https://www.google.com/recaptcha/api.js', array(), false, true );
+
 	wp_enqueue_script( 'hometown-jquery.js', get_theme_file_uri( '/assets/js/jquery.js' ), array(), false, true );
 	wp_enqueue_script( 'hometown-jquery-migrate.min.js', get_theme_file_uri( '/assets/js/jquery-migrate.min.js' ), array(), false, true );
 	wp_enqueue_script( 'hometown-jquery.form.min.js', get_theme_file_uri( '/assets/js/jquery.form.min.js' ), array(), false, true );
@@ -24,6 +26,7 @@ function hometown_custom_scripts() {
 	wp_enqueue_script( 'hometown-waypoints.min.js', get_theme_file_uri( '/assets/js/waypoints.min.js' ), array(), false, true );
 	wp_enqueue_script( 'hometown-wp-embed.min.js', get_theme_file_uri( '/assets/js/wp-embed.min.js' ), array(), false, true );
 	wp_enqueue_script( 'hometown-wp-emoji-release.min.js', get_theme_file_uri( '/assets/js/wp-emoji-release.min.js' ), array(), false, true );
+	wp_enqueue_script( 'hometown-email-decode.min.js', get_theme_file_uri( '/assets/js/email-decode.min.js' ), array(), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'hometown_custom_scripts' );
 

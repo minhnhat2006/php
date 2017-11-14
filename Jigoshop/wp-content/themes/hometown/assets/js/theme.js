@@ -25,6 +25,7 @@ jQuery(document).ready(function($) {
 
 	// Sticky
 	$('.header-wrap.sticky-on').sticky({topSpacing:$('.header-top').outerHeight()*-1});
+	$('.header-wrap.sticky-on').css("top", 0);
 
 	// Match Height
 	$('.card, .mega-menu > .sub-menu > li').matchHeight(true);

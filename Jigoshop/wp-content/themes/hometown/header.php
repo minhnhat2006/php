@@ -42,5 +42,3 @@
 				dynamic_sidebar( 'header-1' );
 			endif;
 			?>
-
-			<div class="main-content">
